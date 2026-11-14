@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>KOS인라인 · 2026.11.15 KIFA FUN DAY</title>
+  <style>
+    :root {
+      --ink: #1a1f2b;
+      --muted: #5b6577;
+      --line: #d9dee8;
+      --paper: #f4f1ec;
+      --card: #ffffff;
+      --accent: #b42318;
+      --fish: #1d6a9a;
+      --cross: #2f6b3a;
+      --onefoot: #8a4b12;
+      --yuchi: #6b4ea2;
+      --g12: #1f5fbf;
+      --g34: #1f7a45;
+      --g56: #b42318;
+      --kos: #fff3cd;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", sans-serif;
+      line-height: 1.45;
+      -webkit-text-size-adjust: 100%;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 20px 14px 48px; }
+    header { display: grid; gap: 8px; margin-bottom: 18px; }
+    .brand {
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      font-size: clamp(1.8rem, 7vw, 2.6rem);
+      color: var(--accent);
+    }
+    h1 { margin: 0; font-size: clamp(1.2rem, 4.5vw, 1.7rem); }
+    .sub { margin: 0; color: var(--muted); }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+    .note {
+      margin: 12px 0 0;
+      padding: 12px 14px;
+      border-left: 4px solid var(--accent);
+      background: var(--card);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    h2 {
+      margin: 26px 0 10px;
+      font-size: 1.1rem;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--ink);
+    }
+    h3 { margin: 18px 0 8px; font-size: 1rem; color: var(--cross); }
+    .timeline, .kids, .brackets { display: grid; gap: 10px; }
+    .slot, .kid, .bracket {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .slot {
+      display: grid;
+      grid-template-columns: 108px 1fr;
+      align-items: stretch;
+    }
+    .time {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      background: #efeae2;
+      padding: 12px 6px;
+      font-size: 0.86rem;
+    }
+    .slot-body { padding: 11px 12px 11px 0; display: grid; gap: 3px; }
+    .event { font-weight: 800; }
+    .event.fish { color: var(--fish); }
+    .event.cross { color: var(--cross); }
+    .event.onefoot { color: var(--onefoot); }
+    .event.break { color: var(--muted); }
+    .who { color: var(--muted); font-size: 0.9rem; }
+    .kid-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfaf7;
+    }
+    .kid-name { margin: 0; font-size: 1.18rem; font-weight: 800; }
+    .bib { font-weight: 800; color: var(--accent); font-size: 1.1rem; }
+    .kid-meta { margin: 2px 0 0; color: var(--muted); font-size: 0.88rem; }
+    table.schedule, table.heat {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .schedule th, .schedule td, .heat th, .heat td {
+      padding: 9px 11px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    .schedule th {
+      width: 28%;
+      color: var(--muted);
+      font-weight: 700;
+      background: #fcfbf8;
+    }
+    .schedule tr:last-child th, .schedule tr:last-child td,
+    .heat tr:last-child td { border-bottom: 0; }
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+    .tag.yuchi { background: #efe8ff; color: var(--yuchi); }
+    .tag.g12 { background: #e7f0ff; color: var(--g12); }
+    .tag.g34 { background: #e6f6ec; color: var(--g34); }
+    .tag.g56 { background: #fde8e6; color: var(--g56); }
+    .legend {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 8px;
+    }
+    .legend .item {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 0.86rem;
+    }
+    .bracket-head {
+      padding: 12px 14px;
+      background: #f3f7f3;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 6px;
+      align-items: center;
+    }
+    .bracket-head strong { font-size: 1rem; }
+    .sheet {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 8px;
+      background: #fff;
+    }
+    .groups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 8px;
+      padding: 12px;
+    }
+    .group {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .group-label {
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 6px 8px;
+      background: #eef2f7;
+      border-bottom: 1px solid var(--line);
+    }
+    .group ul {
+      list-style: none;
+      margin: 0;
+      padding: 6px 8px;
+      font-size: 0.86rem;
+    }
+    .group li { padding: 3px 0; }
+    .group li.kos {
+      background: var(--kos);
+      font-weight: 800;
+      margin: 2px -4px;
+      padding: 3px 4px;
+      border-radius: 6px;
+    }
+    .flow {
+      margin: 0;
+      padding: 0 12px 12px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+    footer {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+    .dl-tip {
+      margin: 10px 0 0;
+      padding: 10px 12px;
+      background: #e8f4ff;
+      border-radius: 10px;
+      font-size: 0.86rem;
+      color: #184a74;
+    }
+    @media (max-width: 640px) {
+      .slot { grid-template-columns: 1fr; }
+      .time { justify-content: flex-start; padding: 9px 12px; }
+      .slot-body { padding: 0 12px 11px; }
+      .schedule th { width: 34%; }
+    }
+    @media print {
+      body { background: #fff; }
+      .wrap { padding: 0; max-width: none; }
+      .kid, .slot, .bracket { break-inside: avoid; }
+      .dl-tip { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="brand">KOS INLINE</p>
+      <h1>2026 KIFA FUN DAY · 11월 15일 코스 안내</h1>
+      <p class="sub">롤러크로스 · 원풋 · 피쉬 (유치부는 원풋 없음)</p>
+      <div class="meta">
+        <span class="chip">참가 7명</span>
+        <span class="chip">피쉬 개인</span>
+        <span class="chip">롤러크로스 토너먼트</span>
+        <span class="chip">원풋 개인</span>
+      </div>
+      <p class="note">
+        피쉬와 롤러크로스는 오전 동시 진행입니다. 같은 부 아이들은 피쉬 끝난 뒤 롤러크로스로 이동하세요.
+        노란 표시는 <strong>KOS인라인</strong> 아이입니다.
+      </p>
+      <p class="dl-tip">아이폰: 이 파일을 저장한 뒤 <strong>파일</strong> 앱 또는 Safari에서 열면 됩니다. PDF도 함께 다운로드하세요.</p>
+    </header>
+
+    <h2>1. 전체 운영 시간표 (KFD 2 · KOS만)</h2>
+    <div class="timeline">
+      <div class="slot"><div class="time">09:15–10:45</div><div class="slot-body"><div class="event cross">롤러크로스 · 유치부 토너먼트</div><div class="who">이지안 (#215) · B조 E조</div></div></div>
+      <div class="slot"><div class="time">09:30–10:30</div><div class="slot-body"><div class="event fish">피쉬 · 1/2학년 개인</div><div class="who">박해인 (#216)</div></div></div>
+      <div class="slot"><div class="time">10:30–11:30</div><div class="slot-body"><div class="event fish">피쉬 · 3/4학년 개인</div><div class="who">임다온 (#211), 김지원 (#212)</div></div></div>
+      <div class="slot"><div class="time">10:45–11:45</div><div class="slot-body"><div class="event cross">롤러크로스 · 1/2학년 토너먼트</div><div class="who">박해인 (#216) · A조 B조</div></div></div>
+      <div class="slot"><div class="time">11:30–12:15</div><div class="slot-body"><div class="event fish">피쉬 · 5/6학년 개인</div><div class="who">김수하 (#213), 최영주 (#214), 박해담 (#217)</div></div></div>
+      <div class="slot"><div class="time">11:45–12:30</div><div class="slot-body"><div class="event cross">롤러크로스 · 3/4학년 토너먼트</div><div class="who">임다온 (#211) A조 · 김지원 (#212) B조</div></div></div>
+      <div class="slot"><div class="time">12:15–12:45</div><div class="slot-body"><div class="event fish">피쉬 · 유치부 개인</div><div class="who">이지안 (#215)</div></div></div>
+      <div class="slot"><div class="time">12:30–13:00</div><div class="slot-body"><div class="event cross">롤러크로스 · 5/6학년 토너먼트</div><div class="who">김수하 A조 · 최영주 B조 · 박해담 A조</div></div></div>
+      <div class="slot"><div class="time">12:45–13:15</div><div class="slot-body"><div class="event break">쉬는 시간 30분</div><div class="who">롤러크로스는 13:00–13:30 휴식</div></div></div>
+      <div class="slot"><div class="time">13:15–14:15</div><div class="slot-body"><div class="event onefoot">원풋 · 1/2학년 개인</div><div class="who">박해인 (#216)</div></div></div>
+      <div class="slot"><div class="time">14:15–15:15</div><div class="slot-body"><div class="event onefoot">원풋 · 3/4학년 개인</div><div class="who">임다온 (#211), 김지원 (#212)</div></div></div>
+      <div class="slot"><div class="time">15:15–16:15</div><div class="slot-body"><div class="event onefoot">원풋 · 5/6학년 개인</div><div class="who">김수하, 최영주, 박해담</div></div></div>
+    </div>
+
+    <h2>2. 아이별 내일 동선</h2>
+    <div class="kids">
+      <article class="kid">
+        <div class="kid-head">
+          <div>
+            <p class="kid-name">이지안 <span class="tag yuchi">유치부 · 여</span></p>
+            <p class="kid-meta">원풋 없음 · 피쉬 + 롤러크로스만</p>
+          </div>
+          <div class="bib">#215</div>
+        </div>
+        <table class="schedule">
+          <tr><th>09:15–10:45</th><td><strong class="event cross">롤러크로스</strong> · 유치부 여 <strong>B조 · E조</strong><br>같은 조: 김아영, <strong>이지안</strong> · 진출 1위→I / 2위→J</td></tr>
+          <tr><th>12:15–12:45</th><td><strong class="event fish">피쉬</strong> · 유치부 개인</td></tr>
+        </table>
+      </article>
+
+      <article class="kid">
+        <div class="kid-head">
+          <div>
+            <p class="kid-name">박해인 <span class="tag g12">1/2학년 · 여</span></p>
+            <p class="kid-meta">피쉬 → 롤러크로스 → 원풋</p>
+          </div>
+          <div class="bib">#216</div>
+        </div>
+        <table class="schedule">
+          <tr><th>09:30–10:30</th><td><strong class="event fish">피쉬</strong> · 1/2학년 개인</td></tr>
+          <tr><th>10:45–11:45</th><td><strong class="event cross">롤러크로스</strong> · 1/2학년 여 <strong>A조 · B조</strong><br>같은 조: 박루아, 이봄, <strong>박해인</strong>, 이지원 · 상위 2명→I조</td></tr>
+          <tr><th>13:15–14:15</th><td><strong class="event onefoot">원풋</strong> · 1/2학년 개인</td></tr>
+        </table>
+      </article>
+
+      <article class="kid">
+        <div class="kid-head">
+          <div>
+            <p class="kid-name">임다온 <span class="tag g34">3/4학년 · 여</span></p>
+            <p class="kid-meta">피쉬 → 롤러크로스 → 원풋</p>
+          </div>
+          <div class="bib">#211</div>
+        </div>
+        <table class="schedule">
+          <tr><th>10:30–11:30</th><td><strong class="event fish">피쉬</strong> · 3/4학년 개인</td></tr>
+          <tr><th>11:45–12:30</th><td><strong class="event cross">롤러크로스</strong> · 3/4학년 여 <strong>A조</strong><br>같은 조: 김시우, 장한별, <strong>임다온</strong>, 김설 · 상위 2명→G조</td></tr>
+          <tr><th>14:15–15:15</th><td><strong class="event onefoot">원풋</strong> · 3/4학년 개인</td></tr>
+        </table>
+      </article>
+
+      <article class="kid">
+        <div class="kid-head">
+          <div>
+            <p class="kid-name">김지원 <span class="tag g34">3/4학년 · 여</span></p>
+            <p class="kid-meta">피쉬 → 롤러크로스 → 원풋</p>
+          </div>
+          <div class="bib">#212</div>
+        </div>
+        <table class="schedule">
+          <tr><th>10:30–11:30</th><td><strong class="event fish">피쉬</strong> · 3/4학년 개인</td></tr>
+          <tr><th>11:45–12:30</th><td><strong class="event cross">롤러크로스</strong> · 3/4학년 여 <strong>B조</strong><br>같은 조: <strong>김지원</strong>, 김아현, 김다은 · 1위→G / 2위→H</td></tr>
+          <tr><th>14:15–15:15</th><td><strong class="event onefoot">원풋</strong> · 3/4학년 개인</td></tr>
+        </table>
+      </article>
+
+      <article class="kid">
+        <div class="kid-head">
+          <div>
+            <p class="kid-name">김수하 <span class="tag g56">5/6학년 · 여</span></p>
+            <p class="kid-meta">피쉬 → 롤러크로스 → 원풋</p>
+          </div>
+          <div class="bib">#213</div>
+        </div>
+        <table class="schedule">
+          <tr><th>11:30–12:15</th><td><strong class="event fish">피쉬</strong> · 5/6학년 개인</td></tr>
+          <tr><th>12:30–13:00</th><td><strong class="event cross">롤러크로스</strong> · 5/6학년 여 <strong>A조</strong><br>같은 조: 이채이, <strong>김수하</strong>, 민소윤, 김민주 · 상위 2명→G조</td></tr>
+          <tr><th>15:15–16:15</th><td><strong class="event onefoot">원풋</strong> · 5/6학년 개인</td></tr>
+        </table>
+      </article>
+
+      <article class="kid">
+        <div class="kid-head">
+          <div>
+            <p class="kid-name">최영주 <span class="tag g56">5/6학년 · 여</span></p>
+            <p class="kid-meta">피쉬 → 롤러크로스 → 원풋</p>
+          </div>
+          <div class="bib">#214</div>
+        </div>
+        <table class="schedule">
+          <tr><th>11:30–12:15</th><td><strong class="event fish">피쉬</strong> · 5/6학년 개인</td></tr>
+          <tr><th>12:30–13:00</th><td><strong class="event cross">롤러크로스</strong> · 5/6학년 여 <strong>B조</strong><br>같은 조: 전가민, <strong>최영주</strong>, 박다연 · 1위→G / 2위→H</td></tr>
+          <tr><th>15:15–16:15</th><td><strong class="event onefoot">원풋</strong> · 5/6학년 개인</td></tr>
+        </table>
+      </article>
+
+      <article class="kid">
+        <div class="kid-head">
+          <div>
+            <p class="kid-name">박해담 <span class="tag g56">5/6학년 · 남</span></p>
+            <p class="kid-meta">피쉬 → 롤러크로스 → 원풋 · KOS 유일 남자</p>
+          </div>
+          <div class="bib">#217</div>
+        </div>
+        <table class="schedule">
+          <tr><th>11:30–12:15</th><td><strong class="event fish">피쉬</strong> · 5/6학년 개인</td></tr>
+          <tr><th>12:30–13:00</th><td><strong class="event cross">롤러크로스</strong> · 5/6학년 남 <strong>A조</strong><br>같은 조: 이현민, 신재현, 김나율, <strong>박해담</strong> · 상위 2명→E조</td></tr>
+          <tr><th>15:15–16:15</th><td><strong class="event onefoot">원풋</strong> · 5/6학년 개인</td></tr>
+        </table>
+      </article>
+    </div>
+
+    <h2>3. 빠른 체크</h2>
+    <div class="legend">
+      <div class="item"><strong>#215 이지안</strong><br>RC 09:15 · 피쉬 12:15</div>
+      <div class="item"><strong>#216 박해인</strong><br>피쉬 09:30 · RC 10:45 · 원풋 13:15</div>
+      <div class="item"><strong>#211 임다온</strong><br>피쉬 10:30 · RC 11:45 A · 원풋 14:15</div>
+      <div class="item"><strong>#212 김지원</strong><br>피쉬 10:30 · RC 11:45 B · 원풋 14:15</div>
+      <div class="item"><strong>#213 김수하</strong><br>피쉬 11:30 · RC 12:30 A · 원풋 15:15</div>
+      <div class="item"><strong>#214 최영주</strong><br>피쉬 11:30 · RC 12:30 B · 원풋 15:15</div>
+      <div class="item"><strong>#217 박해담</strong><br>피쉬 11:30 · RC 12:30 A · 원풋 15:15</div>
+    </div>
+
+    <h2>4. 롤러크로스 대진표 (주신 표 기준)</h2>
+    <p class="sub" style="margin-bottom:10px">노란 줄 = KOS인라인. 상위 진출 인원은 화살표 숫자(보통 상위 1~2명)입니다.</p>
+    <div class="brackets">
+
+      <section class="bracket">
+        <div class="bracket-head">
+          <strong>유치부 여자 · 롤러크로스 (A조)</strong>
+          <span class="sheet">시트 A · 09:15–10:45</span>
+        </div>
+        <div class="groups">
+          <div class="group"><div class="group-label">A조</div><ul><li>김지유</li><li>김아연</li><li>이나을</li></ul></div>
+          <div class="group"><div class="group-label">B조</div><ul><li>최라엘</li><li>김민서</li><li>김태리</li></ul></div>
+          <div class="group"><div class="group-label">C조</div><ul><li>최리아</li><li>김민선</li><li>장진주</li></ul></div>
+          <div class="group"><div class="group-label">D조</div><ul><li>박소현</li><li>오서진</li><li>배다현</li></ul></div>
+          <div class="group"><div class="group-label">E조</div><ul><li>임서현</li><li>김서율</li><li>전이서</li></ul></div>
+          <div class="group"><div class="group-label">F조</div><ul><li>권이담</li><li>김세아</li><li>오연아</li></ul></div>
+        </div>
+        <p class="flow">진행: A·B → G / B·C → H → K · D·E → I / E·F → J → L · K·L → M → 결승</p>
+      </section>
+
+      <section class="bracket">
+        <div class="bracket-head">
+          <strong>유치부 여자 · 롤러크로스 (B조)</strong>
+          <span class="sheet">시트 B · 09:15–10:45</span>
+        </div>
+        <div class="groups">
+          <div class="group"><div class="group-label">A조</div><ul><li>김리아</li><li>박하린</li><li>Hakka Inna</li></ul></div>
+          <div class="group"><div class="group-label">B조</div><ul><li>민다은</li><li>장나연</li><li>황다경</li></ul></div>
+          <div class="group"><div class="group-label">C조</div><ul><li>차은빈</li><li>이정안</li><li>임재아</li></ul></div>
+          <div class="group"><div class="group-label">D조</div><ul><li>명예진</li><li>김이은</li><li>반승아</li></ul></div>
+          <div class="group"><div class="group-label">E조 ★KOS</div><ul><li>김아영</li><li class="kos">이지안 #215</li></ul></div>
+          <div class="group"><div class="group-label">F조</div><ul><li>조은율</li><li>이설아</li><li>안이솔</li></ul></div>
+        </div>
+        <p class="flow">진행: A·B → G / B·C → H → K · D·E → I / E·F → J → L · K·L → N → 결승<br>이지안: E조에서 진출 시 I 또는 J로 이동</p>
+      </section>
+
+      <section class="bracket">
+        <div class="bracket-head">
+          <strong>1·2학년 여자 · 롤러크로스 (A조)</strong>
+          <span class="sheet">시트 A · 10:45–11:45</span>
+        </div>
+        <div class="groups">
+          <div class="group"><div class="group-label">A조</div><ul><li>이아인</li><li>이채빈</li><li>전소이</li><li>안이진</li></ul></div>
+          <div class="group"><div class="group-label">B조 ★KOS</div><ul><li>박루아</li><li>이봄</li><li class="kos">박해인 #216</li><li>이지원</li></ul></div>
+          <div class="group"><div class="group-label">C조</div><ul><li>권로아</li><li>하유림</li><li>배규리</li></ul></div>
+          <div class="group"><div class="group-label">D조</div><ul><li>이설현</li><li>송아인</li><li>문단아</li></ul></div>
+          <div class="group"><div class="group-label">E조</div><ul><li>김태연</li><li>조혜주</li><li>함소현</li><li>정시아</li></ul></div>
+          <div class="group"><div class="group-label">F조</div><ul><li>김하린</li><li>강이나</li><li>황예솔</li></ul></div>
+          <div class="group"><div class="group-label">G조</div><ul><li>박채윤</li><li>김수연</li><li>박주아</li></ul></div>
+          <div class="group"><div class="group-label">H조</div><ul><li>권하선</li><li>박하연</li><li>이소율</li></ul></div>
+        </div>
+        <p class="flow">진행: A·B→I / C·D→J / E·F→K / G·H→L · I·J→M / K·L→N · M·N→결승<br>박해인: B조 상위 2명 → I조</p>
+      </section>
+
+      <section class="bracket">
+        <div class="bracket-head">
+          <strong>1·2학년 여자 · 롤러크로스 (B조)</strong>
+          <span class="sheet">시트 B · 10:45–11:45</span>
+        </div>
+        <div class="groups">
+          <div class="group"><div class="group-label">A조</div><ul><li>신은수</li><li>안지안</li><li>박하은</li><li>황서하</li></ul></div>
+          <div class="group"><div class="group-label">B조</div><ul><li>김하윤</li><li>윤채은</li><li>윤이나</li></ul></div>
+          <div class="group"><div class="group-label">C조</div><ul><li>김태리</li><li>김나영</li><li>박소율</li></ul></div>
+          <div class="group"><div class="group-label">D조</div><ul><li>장하은</li><li>이주빈</li><li>신수정</li></ul></div>
+          <div class="group"><div class="group-label">E조</div><ul><li>이도이</li><li>모정현</li><li>송윤주</li><li>이다인</li></ul></div>
+          <div class="group"><div class="group-label">F조</div><ul><li>김태린</li><li>황유이</li><li>이효민</li></ul></div>
+          <div class="group"><div class="group-label">G조</div><ul><li>심유정</li><li>정하린</li><li>오로라</li></ul></div>
+          <div class="group"><div class="group-label">H조</div><ul><li>배수아</li><li>박효림</li><li>이은서</li></ul></div>
+        </div>
+        <p class="flow">진행: A·B→I / C·D→J / E·F→K / G·H→L · I·J→M / K·L→N · M·N→결승</p>
+      </section>
+
+      <section class="bracket">
+        <div class="bracket-head">
+          <strong>3·4학년 여자 · 롤러크로스</strong>
+          <span class="sheet">11:45–12:30</span>
+        </div>
+        <div class="groups">
+          <div class="group"><div class="group-label">A조 ★KOS</div><ul><li>김시우</li><li>장한별</li><li class="kos">임다온 #211</li><li>김설</li></ul></div>
+          <div class="group"><div class="group-label">B조 ★KOS</div><ul><li class="kos">김지원 #212</li><li>김아현</li><li>김다은</li></ul></div>
+          <div class="group"><div class="group-label">C조</div><ul><li>이로운</li><li>조유빈</li><li>황재이</li></ul></div>
+          <div class="group"><div class="group-label">D조</div><ul><li>신하은</li><li>김민지</li><li>김소담</li></ul></div>
+          <div class="group"><div class="group-label">E조</div><ul><li>박소율</li><li>박서우</li><li>김나율</li></ul></div>
+          <div class="group"><div class="group-label">F조</div><ul><li>박민하</li><li>조은솔</li><li>임서연</li></ul></div>
+        </div>
+        <p class="flow">진행: A·B → G/H → K · D·E·F → I/J → L · K·L → 준결승 → 결승<br>임다온: A조 상위 2 → G · 김지원: B조 1위→G / 2위→H</p>
+      </section>
+
+      <section class="bracket">
+        <div class="bracket-head">
+          <strong>3·4학년 남자 · 롤러크로스</strong>
+          <span class="sheet">11:45–12:30</span>
+        </div>
+        <div class="groups">
+          <div class="group"><div class="group-label">A조</div><ul><li>전은재</li><li>최재영</li><li>김세현</li><li>김재호</li></ul></div>
+          <div class="group"><div class="group-label">B조</div><ul><li>이주원</li><li>이그림</li><li>박재훈</li><li>정준우</li></ul></div>
+          <div class="group"><div class="group-label">C조</div><ul><li>박현</li><li>강민준</li><li>장서준</li></ul></div>
+          <div class="group"><div class="group-label">D조</div><ul><li>강리우</li><li>한주완</li><li>김도현</li></ul></div>
+          <div class="group"><div class="group-label">E조</div><ul><li>이준서</li><li>김시우</li><li>신우현</li><li>이제희</li></ul></div>
+          <div class="group"><div class="group-label">F조</div><ul><li>정하준</li><li>최성준</li><li>조민찬</li></ul></div>
+          <div class="group"><div class="group-label">G조</div><ul><li>송민우</li><li>이주한</li><li>최서준</li></ul></div>
+          <div class="group"><div class="group-label">H조</div><ul><li>정우진</li><li>권민율</li><li>장현성</li></ul></div>
+        </div>
+        <p class="flow">진행: A·B→I / C·D→J / E·F→K / G·H→L · I·J→M / K·L→N · M·N→결승 (각 조 상위 2)</p>
+      </section>
+
+      <section class="bracket">
+        <div class="bracket-head">
+          <strong>5·6학년 여자 · 롤러크로스</strong>
+          <span class="sheet">12:30–13:00</span>
+        </div>
+        <div class="groups">
+          <div class="group"><div class="group-label">A조 ★KOS</div><ul><li>이채이</li><li class="kos">김수하 #213</li><li>민소윤</li><li>김민주</li></ul></div>
+          <div class="group"><div class="group-label">B조 ★KOS</div><ul><li>전가민</li><li class="kos">최영주 #214</li><li>박다연</li></ul></div>
+          <div class="group"><div class="group-label">C조</div><ul><li>이하윤</li><li>정연우</li><li>석예림</li></ul></div>
+          <div class="group"><div class="group-label">D조</div><ul><li>최수정</li><li>박은서</li><li>신유림</li></ul></div>
+          <div class="group"><div class="group-label">E조</div><ul><li>신희수</li><li>정지우</li><li>백선율</li></ul></div>
+          <div class="group"><div class="group-label">F조</div><ul><li>임태이</li><li>김지유</li><li>정하율</li></ul></div>
+        </div>
+        <p class="flow">진행: A·B → G/H → K · D·E·F → I/J → L · K·L → 준결승 → 결승<br>김수하: A조 상위 2 → G · 최영주: B조 1위→G / 2위→H</p>
+      </section>
+
+      <section class="bracket">
+        <div class="bracket-head">
+          <strong>5·6학년 남자 · 롤러크로스</strong>
+          <span class="sheet">12:30–13:00</span>
+        </div>
+        <div class="groups">
+          <div class="group"><div class="group-label">A조 ★KOS</div><ul><li>이현민</li><li>신재현</li><li>김나율</li><li class="kos">박해담 #217</li></ul></div>
+          <div class="group"><div class="group-label">B조</div><ul><li>이강민</li><li>정시윤</li><li>손주원</li></ul></div>
+          <div class="group"><div class="group-label">C조</div><ul><li>차정운</li><li>장윤</li><li>이원준</li></ul></div>
+        </div>
+        <p class="flow">진행: A(상위2)+B(1) → E · B(1)+C(상위2) → F · E·F 각 상위 2 → 결승<br>박해담: A조 상위 2명 → E조</p>
+      </section>
+    </div>
+
+    <footer>
+      출처: 2026 KIFA FUN DAY 11/15 참가명단 · 롤러크로스 대진표 · KFD 2 시간표<br>
+      피쉬·원풋은 개인전. 롤러크로스는 예선 이후 현장 대진표에 따라 다음 조로 이동합니다.<br>
+      파일: KOS_KIFA_FUNDAY_2026-11-15.html / .pdf
+    </footer>
+  </div>
+</body>
+</html>
