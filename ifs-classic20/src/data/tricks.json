@@ -1,0 +1,804 @@
+[
+  {
+    "code": "CRA",
+    "name": "Crab",
+    "category": "JUMP",
+    "base": 1.0,
+    "tap": 0.7,
+    "under": 0.5,
+    "combo": 1.2,
+    "comboTap": 0.84,
+    "comboUnder": 0.6,
+    "qoe": {
+      "3": 0.3,
+      "2": 0.2,
+      "1": 0.1,
+      "0": 0.0,
+      "-1": -0.1,
+      "-2": -0.2,
+      "-3": -0.3
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Cross": 20
+    },
+    "video": "https://youtu.be/yJs-txClLuk"
+  },
+  {
+    "code": "Kaz",
+    "name": "Kazaciok",
+    "category": "JUMP",
+    "base": 2.5,
+    "tap": 1.75,
+    "under": 1.25,
+    "combo": 3.0,
+    "comboTap": 2.1,
+    "comboUnder": 1.5,
+    "qoe": {
+      "3": 0.75,
+      "2": 0.5,
+      "1": 0.25,
+      "0": 0.0,
+      "-1": -0.25,
+      "-2": -0.5,
+      "-3": -0.75
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Cross": 20,
+      "Back": 30,
+      "Double": 20,
+      "Christie": 200
+    },
+    "video": "https://www.youtube.com/watch"
+  },
+  {
+    "code": "WIP",
+    "name": "Wiper",
+    "category": "JUMP",
+    "base": 3.0,
+    "tap": 2.1,
+    "under": 1.5,
+    "combo": 3.6,
+    "comboTap": 2.52,
+    "comboUnder": 1.8,
+    "qoe": {
+      "3": 0.9,
+      "2": 0.6,
+      "1": 0.3,
+      "0": 0.0,
+      "-1": -0.3,
+      "-2": -0.6,
+      "-3": -0.9
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Toe": 20,
+      "Heel": 21,
+      "Sit": 20,
+      "Reverse": 15,
+      "Left": 0,
+      "Right": 0
+    },
+    "video": "https://youtu.be/3Kpag94qiIk"
+  },
+  {
+    "code": "BUT",
+    "name": "Butterfly",
+    "category": "OTHERS",
+    "base": 3.0,
+    "tap": 2.1,
+    "under": 1.5,
+    "combo": 3.6,
+    "comboTap": 2.52,
+    "comboUnder": 1.8,
+    "qoe": {
+      "3": 0.9,
+      "2": 0.6,
+      "1": 0.3,
+      "0": 0.0,
+      "-1": -0.3,
+      "-2": -0.6,
+      "-3": -0.9
+    },
+    "distance": {
+      "50cm": 5.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Reverse": 20,
+      "Cross": 20,
+      "2 Wheels HH": 15,
+      "2 Wheels TT": 15
+    },
+    "video": "https://youtu.be/Ac91wpOwuFI"
+  },
+  {
+    "code": "COB",
+    "name": "Cobra",
+    "category": "OTHERS",
+    "base": 2.0,
+    "tap": 1.4,
+    "under": 1.0,
+    "combo": 2.4,
+    "comboTap": 1.68,
+    "comboUnder": 1.2,
+    "qoe": {
+      "3": 0.6,
+      "2": 0.4,
+      "1": 0.2,
+      "0": 0.0,
+      "-1": -0.2,
+      "-2": -0.4,
+      "-3": -0.6
+    },
+    "distance": {
+      "50cm": 10.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Back": 20,
+      "Cross": 20,
+      "2 Wheels TH": 15,
+      "Sit": 45
+    },
+    "video": "https://youtu.be/UGQ9f6myDvQ"
+  },
+  {
+    "code": "EAG",
+    "name": "Eagle",
+    "category": "OTHERS",
+    "base": 1.0,
+    "tap": 0.7,
+    "under": 0.5,
+    "combo": 1.2,
+    "comboTap": 0.84,
+    "comboUnder": 0.6,
+    "qoe": {
+      "3": 0.3,
+      "2": 0.2,
+      "1": 0.1,
+      "0": 0.0,
+      "-1": -0.1,
+      "-2": -0.2,
+      "-3": -0.3
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Reverse": 20,
+      "Cross": 20,
+      "5 Wheels": 10,
+      "2 Wheels TH": 15,
+      "2 Wheels HH": 15,
+      "2 Wheels TT": 15
+    },
+    "video": "https://youtu.be/7HYC_zdKSmQ"
+  },
+  {
+    "code": "IXS",
+    "name": "X",
+    "category": "OTHERS",
+    "base": 1.5,
+    "tap": 1.05,
+    "under": 0.75,
+    "combo": 1.8,
+    "comboTap": 1.26,
+    "comboUnder": 0.9,
+    "qoe": {
+      "3": 0.45,
+      "2": 0.3,
+      "1": 0.15,
+      "0": 0.0,
+      "-1": -0.15,
+      "-2": -0.3,
+      "-3": -0.45
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "2 Wheels HH": 15,
+      "2 Wheels TT": 15,
+      "2 Wheels TH": 15,
+      "Jump": 30
+    },
+    "video": "https://youtu.be/vJGXm5T0fu8"
+  },
+  {
+    "code": "ZEA",
+    "name": "Z-Eagle",
+    "category": "OTHERS",
+    "base": 1.5,
+    "tap": 1.05,
+    "under": 0.75,
+    "combo": 1.8,
+    "comboTap": 1.26,
+    "comboUnder": 0.9,
+    "qoe": {
+      "3": 0.45,
+      "2": 0.3,
+      "1": 0.15,
+      "0": 0.0,
+      "-1": -0.15,
+      "-2": -0.3,
+      "-3": -0.45
+    },
+    "distance": {
+      "50cm": 5.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "5 Wheels": 5,
+      "2 Wheels TH": 15,
+      "2 Wheels HH": 15,
+      "2 Wheels TT": 15
+    },
+    "video": ""
+  },
+  {
+    "code": "FOO",
+    "name": "Footgun",
+    "category": "SITTING",
+    "base": 3.0,
+    "tap": 2.1,
+    "under": 1.5,
+    "combo": 3.6,
+    "comboTap": 2.52,
+    "comboUnder": 1.8,
+    "qoe": {
+      "3": 0.9,
+      "2": 0.6,
+      "1": 0.3,
+      "0": 0.0,
+      "-1": -0.3,
+      "-2": -0.6,
+      "-3": -0.9
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Toe": 50,
+      "Heel": 50,
+      "Back": 30,
+      "Christie": 200,
+      "2 Wheels TH": 15,
+      "5 Wheels": 10
+    },
+    "video": "https://www.youtube.com/watch"
+  },
+  {
+    "code": "SUP",
+    "name": "Superman",
+    "category": "SITTING",
+    "base": 2.0,
+    "tap": 1.4,
+    "under": 1.0,
+    "combo": 2.4,
+    "comboTap": 1.68,
+    "comboUnder": 1.2,
+    "qoe": {
+      "3": 0.6,
+      "2": 0.4,
+      "1": 0.2,
+      "0": 0.0,
+      "-1": -0.2,
+      "-2": -0.4,
+      "-3": -0.6
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Toe": 50,
+      "Heel": 50,
+      "Back": 30,
+      "2 Wheels HH": 15,
+      "2 Wheels TT": 15,
+      "2 Wheels TH": 15
+    },
+    "video": "https://youtu.be/wCk__c5vUnQ"
+  },
+  {
+    "code": "TEA",
+    "name": "Teapot",
+    "category": "SITTING",
+    "base": 2.0,
+    "tap": 1.4,
+    "under": 1.0,
+    "combo": 2.4,
+    "comboTap": 1.68,
+    "comboUnder": 1.2,
+    "qoe": {
+      "3": 0.6,
+      "2": 0.4,
+      "1": 0.2,
+      "0": 0.0,
+      "-1": -0.2,
+      "-2": -0.4,
+      "-3": -0.6
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Back": 30,
+      "Heel": 50,
+      "Toe": 50
+    },
+    "video": "https://youtu.be/fmFaW3R1qbM"
+  },
+  {
+    "code": "SEV",
+    "name": "7",
+    "category": "SPINS",
+    "base": 3.0,
+    "tap": 2.1,
+    "under": 1.5,
+    "combo": 3.6,
+    "comboTap": 2.52,
+    "comboUnder": 1.8,
+    "qoe": {
+      "3": 0.9,
+      "2": 0.6,
+      "1": 0.3,
+      "0": 0.0,
+      "-1": -0.3,
+      "-2": -0.6,
+      "-3": -0.9
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "1 Cone": 5,
+      "1 Cone foreward": 15,
+      "Back": 20,
+      "Christie": 40,
+      "Double": 10,
+      "Ext": 5,
+      "Grab": 1,
+      "Heel": 21,
+      "Int": 10,
+      "Jump": 20,
+      "Left": 0,
+      "Right": 0,
+      "Sit": 20,
+      "Toe": 20,
+      "Cross": 20
+    },
+    "video": "https://youtu.be/Ba4i1hNTFnk"
+  },
+  {
+    "code": "INF",
+    "name": "Infinity",
+    "category": "SPINS",
+    "base": 3.15,
+    "tap": 2.2,
+    "under": 1.57,
+    "combo": 3.78,
+    "comboTap": 2.65,
+    "comboUnder": 1.89,
+    "qoe": {
+      "3": 0.94,
+      "2": 0.63,
+      "1": 0.32,
+      "0": 0.0,
+      "-1": -0.32,
+      "-2": -0.63,
+      "-3": -0.94
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Back": 30,
+      "Toe": 20,
+      "Heel": 21
+    },
+    "video": "https://youtu.be/mixo7Qz_XNI"
+  },
+  {
+    "code": "SPI",
+    "name": "Spin",
+    "category": "SPINS",
+    "base": 1.2,
+    "tap": 0.84,
+    "under": 0.6,
+    "combo": 1.44,
+    "comboTap": 1.01,
+    "comboUnder": 0.72,
+    "qoe": {
+      "3": 0.36,
+      "2": 0.24,
+      "1": 0.12,
+      "0": 0.0,
+      "-1": -0.12,
+      "-2": -0.24,
+      "-3": -0.36
+    },
+    "distance": {
+      "50cm": 5.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "1 Cone": 5,
+      "Double": 10,
+      "Ext": 5,
+      "Int": 10,
+      "Left": 0,
+      "Right": 0,
+      "5 Wheels": 5,
+      "1 Cone foreward": 15,
+      "Back": 30,
+      "Cross": 20,
+      "2 Wheels HH": 15,
+      "2 Wheels TT": 15,
+      "2 Wheels TH": 15
+    },
+    "video": "https://youtu.be/X21_A2AWZtM"
+  },
+  {
+    "code": "DAY",
+    "name": "DayNight",
+    "category": "WHEELING",
+    "base": 2.55,
+    "tap": 1.78,
+    "under": 1.27,
+    "combo": 3.06,
+    "comboTap": 2.14,
+    "comboUnder": 1.53,
+    "qoe": {
+      "3": 0.76,
+      "2": 0.51,
+      "1": 0.26,
+      "0": 0.0,
+      "-1": -0.26,
+      "-2": -0.51,
+      "-3": -0.76
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Heel": 21,
+      "Jump": 20,
+      "Left": 0,
+      "Reverse": 15,
+      "Right": 0,
+      "Sit": 20,
+      "Toe": 20,
+      "Christie": 30
+    },
+    "video": "https://www.youtube.com/watch"
+  },
+  {
+    "code": "FLI",
+    "name": "Flip/Fish",
+    "category": "WHEELING",
+    "base": 2.4,
+    "tap": 1.68,
+    "under": 1.2,
+    "combo": 2.88,
+    "comboTap": 2.02,
+    "comboUnder": 1.44,
+    "qoe": {
+      "3": 0.72,
+      "2": 0.48,
+      "1": 0.24,
+      "0": 0.0,
+      "-1": -0.24,
+      "-2": -0.48,
+      "-3": -0.72
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Back": 20,
+      "Ext": 5,
+      "Heel": 21,
+      "Int": 10,
+      "Jump": 20,
+      "Left": 0,
+      "Reverse": 15,
+      "Right": 0,
+      "Sit": 20,
+      "Toe": 20,
+      "Christie": 30
+    },
+    "video": "https://www.youtube.com/watch"
+  },
+  {
+    "code": "FRE",
+    "name": "French Shift",
+    "category": "WHEELING",
+    "base": 2.55,
+    "tap": 1.78,
+    "under": 1.27,
+    "combo": 3.06,
+    "comboTap": 2.14,
+    "comboUnder": 1.53,
+    "qoe": {
+      "3": 0.76,
+      "2": 0.51,
+      "1": 0.26,
+      "0": 0.0,
+      "-1": -0.26,
+      "-2": -0.51,
+      "-3": -0.76
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Int": 0,
+      "Ext": 0,
+      "Left": 0,
+      "Right": 0,
+      "Reverse": 20,
+      "Heel": 21,
+      "Toe": 20,
+      "Christie": 30,
+      "Sit": 20,
+      "Jump": 10
+    },
+    "video": "https://www.youtube.com/watch"
+  },
+  {
+    "code": "LEA",
+    "name": "Leaf",
+    "category": "WHEELING",
+    "base": 3.1,
+    "tap": 2.17,
+    "under": 1.55,
+    "combo": 3.72,
+    "comboTap": 2.6,
+    "comboUnder": 1.86,
+    "qoe": {
+      "3": 0.93,
+      "2": 0.62,
+      "1": 0.31,
+      "0": 0.0,
+      "-1": -0.31,
+      "-2": -0.62,
+      "-3": -0.93
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Back": 30,
+      "Front": 5,
+      "Heel": 80,
+      "Jump": 30,
+      "Left": 0,
+      "Right": 0,
+      "Toe": 80,
+      "Reverse": 30
+    },
+    "video": "https://youtu.be/3cqKYjS9zBo"
+  },
+  {
+    "code": "WHE",
+    "name": "One Foot",
+    "category": "WHEELING",
+    "base": 1.0,
+    "tap": 0.7,
+    "under": 0.5,
+    "combo": 1.2,
+    "comboTap": 0.84,
+    "comboUnder": 0.6,
+    "qoe": {
+      "3": 0.3,
+      "2": 0.2,
+      "1": 0.1,
+      "0": 0.0,
+      "-1": -0.1,
+      "-2": -0.2,
+      "-3": -0.3
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Toe": 20,
+      "Left": 0,
+      "Int": 10,
+      "Right": 0,
+      "Jump": 20,
+      "Heel": 21,
+      "Ext": 5,
+      "Back": 20
+    },
+    "video": "https://youtu.be/R8cvbOClULc"
+  },
+  {
+    "code": "SHI",
+    "name": "Shift",
+    "category": "WHEELING",
+    "base": 3.0,
+    "tap": 2.1,
+    "under": 1.5,
+    "combo": 3.6,
+    "comboTap": 2.52,
+    "comboUnder": 1.8,
+    "qoe": {
+      "3": 0.9,
+      "2": 0.6,
+      "1": 0.3,
+      "0": 0.0,
+      "-1": -0.3,
+      "-2": -0.6,
+      "-3": -0.9
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Christie": 40,
+      "Ext": 5,
+      "Int": 10,
+      "Heel": 21,
+      "Jump": 20,
+      "Left": 0,
+      "Reverse": 15,
+      "Right": 0,
+      "Sit": 20,
+      "Toe": 20
+    },
+    "video": "https://youtu.be/LJNM4p3fspM"
+  },
+  {
+    "code": "SNK",
+    "name": "Snake",
+    "category": "WHEELING",
+    "base": 1.0,
+    "tap": 0.7,
+    "under": 0.5,
+    "combo": 1.2,
+    "comboTap": 0.84,
+    "comboUnder": 0.6,
+    "qoe": {
+      "3": 0.3,
+      "2": 0.2,
+      "1": 0.1,
+      "0": 0.0,
+      "-1": -0.1,
+      "-2": -0.2,
+      "-3": -0.3
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "5 Wheels": 5,
+      "Back": 20,
+      "2 Wheels TH": 15,
+      "2 Wheels HH": 15,
+      "2 Wheels TT": 15
+    },
+    "video": "https://youtu.be/5ogWCKXiVVE"
+  },
+  {
+    "code": "SQR",
+    "name": "Square",
+    "category": "WHEELING",
+    "base": 1.5,
+    "tap": 1.05,
+    "under": 0.75,
+    "combo": 1.8,
+    "comboTap": 1.26,
+    "comboUnder": 0.9,
+    "qoe": {
+      "3": 0.45,
+      "2": 0.3,
+      "1": 0.15,
+      "0": 0.0,
+      "-1": -0.15,
+      "-2": -0.3,
+      "-3": -0.45
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Left": 0,
+      "Right": 0,
+      "Toe": 20,
+      "Back": 20,
+      "Heel": 21,
+      "Front": 5,
+      "Sit": 45
+    },
+    "video": "https://youtu.be/5okJmV0--M8"
+  },
+  {
+    "code": "TRI",
+    "name": "Triangle",
+    "category": "WHEELING",
+    "base": 2.1,
+    "tap": 1.47,
+    "under": 1.05,
+    "combo": 2.52,
+    "comboTap": 1.76,
+    "comboUnder": 1.26,
+    "qoe": {
+      "3": 0.63,
+      "2": 0.42,
+      "1": 0.21,
+      "0": 0.0,
+      "-1": -0.21,
+      "-2": -0.42,
+      "-3": -0.63
+    },
+    "distance": {
+      "50cm": 0.0,
+      "80cm": 0.0,
+      "120cm": 0.0
+    },
+    "attributes": {
+      "Toe": 20,
+      "Right": 0,
+      "Sit": 20,
+      "Left": 0,
+      "Reverse": 15,
+      "Jump": 20,
+      "Int": 10,
+      "Heel": 21,
+      "Ext": 5,
+      "Back": 20,
+      "Christie": 30,
+      "Front": 5
+    },
+    "video": "https://youtu.be/feOstXzHka8"
+  }
+]
