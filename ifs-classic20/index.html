@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>클래식 2.0 룰북 · 심판용</title>
+  <title>룰북 이해 · 심판 포지션 · Classic 2.0</title>
   <style>
     :root {
       --bg: #f4f1ea;
@@ -24,9 +24,9 @@
     }
     main { max-width: 900px; margin: 0 auto; padding: 28px 18px 72px; }
     .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin: 0; }
-    h1 { font-size: 1.9rem; line-height: 1.25; margin: 10px 0 0; }
+    h1 { font-size: 1.85rem; line-height: 1.25; margin: 10px 0 0; }
     h2 { font-size: 1.25rem; margin: 36px 0 12px; }
-    h3 { font-size: 1.05rem; margin: 22px 0 8px; }
+    h3 { font-size: 1.05rem; margin: 0 0 8px; }
     .lead, .muted { color: var(--muted); }
     .callout { background: #fff6e8; border: 1px solid #e2c48a; border-radius: 12px; padding: 14px 16px; margin: 16px 0; }
     .card { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
@@ -39,60 +39,58 @@
     ul { margin: 0; padding-left: 1.15rem; }
     li { margin: 4px 0; }
     hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
-    footer { margin-top: 36px; font-size: .8rem; color: var(--muted); }
-    .pill { display: inline-block; border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 4px 10px; font-size: 12px; margin-right: 6px; }
+    footer { margin-top: 36px; font-size: .85rem; color: var(--muted); }
+    .nav { margin: 14px 0 0; }
+    .nav a {
+      display: inline-block;
+      margin: 0 8px 8px 0;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
 <main>
-  <p class="eyebrow">심판 · 룰북용 · Classic 2.0</p>
-  <p><span class="pill">공개</span><span class="pill">로그인 없음</span><span class="pill">지도자 전략 페이지와 분리</span></p>
-  <h1>인라인 프리스타일 클래식 2.0<br/>채점 규정 · 심판 안내</h1>
-  <p class="lead">PRO Skate Classic 2.0(시험 규정)을 심판·운영 기준으로 정리한 공개 안내입니다. 선수 A/B/C 훈련 전략은 이 페이지에 없습니다.</p>
+  <p class="eyebrow">공개 링크 1/2 · 룰북 · 심판</p>
+  <h1>룰북 이해 · 심판 포지션 변화</h1>
+  <p class="lead">Classic 2.0에서 채점이 어떻게 바뀌는지, 심판 역할이 어떻게 나뉘는지만 정리한 페이지입니다. 선수 전략은 다른 공개 링크에 있습니다.</p>
+  <p class="nav">
+    <a href="https://classic-guide-418a.apps.grok.bot/">선수 전략 보기 →</a>
+  </p>
 
   <div class="callout">
-    <strong>중요</strong><br/>
-    이 문서는 World Skate 공식 룰북이 아닙니다. 원문은 시험 중인 규정입니다.
-    공식 World Skate 규정: <a href="https://www.worldskate.org/inline-freestyle/about/regulations" target="_blank" rel="noopener">worldskate.org</a>
+    <strong>범위</strong><br/>
+    PRO Skate Classic 2.0 시험 규정 기준. World Skate 공식 룰북이 아닙니다.
+    공식 규정: <a href="https://www.worldskate.org/inline-freestyle/about/regulations" target="_blank" rel="noopener">worldskate.org</a>
   </div>
 
-  <h2>한 줄 공식</h2>
+  <h2>1. 채점이 바뀐 핵심</h2>
   <div class="card">
     <p><strong>최종 = (기술점수 × 연결 배율) + 예술점수 − 감점</strong></p>
-    <p class="muted">심판은 “무엇이 나왔는가”와 “얼마나 잘했는가”를 나눕니다. 난도 값은 트릭 카드가 정하고, 품질 심판은 QoE·연결·예술만 매깁니다.</p>
+    <p class="muted">예전에는 같은 심판이 “무엇이 나왔는가”와 “얼마나 잘했는가”를 같이 봤습니다. 2.0은 기술팀(식별)과 품질 심판(품질)으로 나눕니다.</p>
   </div>
 
-  <h2>쉬운 용어 (심판)</h2>
+  <h2>2. 예전 vs Classic 2.0</h2>
   <table>
-    <thead><tr><th>말</th><th>뜻</th></tr></thead>
+    <thead><tr><th>항목</th><th>예전</th><th>Classic 2.0</th></tr></thead>
     <tbody>
-      <tr><td>스페셜리스트</td><td>기술 이름·속성·수행 수준을 실시간으로 부름</td></tr>
-      <tr><td>어시스턴트</td><td>콜 검증, 리뷰, 감점 기록</td></tr>
-      <tr><td>데이터 오퍼레이터</td><td>태블릿 실시간 입력·리뷰 영상</td></tr>
-      <tr><td>컨트롤러</td><td>(선택) 펜 기록으로 교차 검증</td></tr>
-      <tr><td>품질 심판</td><td>QoE · 연결 · 예술만 채점</td></tr>
-      <tr><td>QoE</td><td>기술마다 −3~+3 수행 품질</td></tr>
-      <tr><td>연결(풋워크)</td><td>0~5점 → 기술점수 전체 배율 0.95~1.25</td></tr>
-      <tr><td>예술 3요소</td><td>흐름 / 구성(음악 제외) / 표현(음악)</td></tr>
-    </tbody>
-  </table>
-
-  <h2>예전 Classic vs Classic 2.0</h2>
-  <table>
-    <thead><tr><th>항목</th><th>예전</th><th>2.0</th></tr></thead>
-    <tbody>
-      <tr><td>식별</td><td>채점 심판이 각자</td><td>스페셜리스트 콜 + 기술팀 검증</td></tr>
-      <tr><td>난도 값</td><td>심판이 해석</td><td>트릭 카드 자동 적용</td></tr>
-      <tr><td>품질</td><td>기술 점수에 섞임</td><td>기술마다 QoE</td></tr>
-      <tr><td>연결</td><td>기술 점수 일부</td><td>TES 배율</td></tr>
-      <tr><td>예술</td><td>종합 1점 느낌</td><td>3요소 분리</td></tr>
+      <tr><td>기술 만점</td><td>대략 60에서 막힘</td><td>상한 없음</td></tr>
+      <tr><td>연결(풋워크)</td><td>기술 점수 안에 섞임</td><td>기술 전체에 곱함 (0.95~1.25)</td></tr>
+      <tr><td>예술</td><td>기술 ±10 가이드에 묶이기 쉬움</td><td>기술과 분리, 3항목</td></tr>
       <tr><td>후반</td><td>거의 없음</td><td>약 90초 이후 ×1.10</td></tr>
+      <tr><td>심판</td><td>한 패널이 식별+품질</td><td>기술팀 + 품질 심판</td></tr>
     </tbody>
   </table>
 
-  <h2>연결 배율</h2>
+  <h2>3. 연결 배율</h2>
   <table>
-    <thead><tr><th>점수</th><th>배율</th></tr></thead>
+    <thead><tr><th>연결 점수</th><th>배율</th></tr></thead>
     <tbody>
       <tr><td>0.0</td><td>×0.95</td></tr>
       <tr><td>1.0</td><td>×1.00</td></tr>
@@ -103,59 +101,54 @@
     </tbody>
   </table>
 
-  <h2>포지션별 해야 할 일</h2>
-  <div class="grid2">
+  <h2>4. 심판 포지션 변화</h2>
+  <table>
+    <thead><tr><th>기존</th><th>2.0</th><th>달라진 점</th></tr></thead>
+    <tbody>
+      <tr><td>채점 심판</td><td>품질 심판</td><td>기술 식별 대신 QoE·연결·예술만</td></tr>
+      <tr><td>(없음)</td><td>스페셜리스트</td><td>기술 이름·속성·수준을 부름</td></tr>
+      <tr><td>계산 심판</td><td>데이터 오퍼레이터</td><td>실시간 입력·리뷰 운영</td></tr>
+      <tr><td>치프</td><td>품질 심판 겸임</td><td>기술 콜은 기술팀</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid2" style="margin-top:12px">
     <div class="card">
-      <h3>스페셜리스트</h3>
+      <h3>기술팀</h3>
       <ul>
-        <li>START/END로 평가 구간</li>
-        <li>콜 순서: 간격 → 기술 → 속성 → 수준 → 콤보</li>
-        <li>Base / Under / Tap / Cancel / Review</li>
-        <li>QoE·예술·연결 점수는 주지 않음</li>
+        <li>스페셜리스트: 콜</li>
+        <li>어시스턴트: 검증·감점 기록</li>
+        <li>데이터 오퍼레이터: 입력</li>
+        <li>컨트롤러(선택): 펜 교차검증</li>
       </ul>
     </div>
     <div class="card">
       <h3>품질 심판</h3>
       <ul>
-        <li>기술마다 QoE −3~+3</li>
+        <li>QoE −3~+3 (기술마다)</li>
         <li>연결 0~5 → 배율</li>
         <li>예술 3요소 각 0~10</li>
-        <li>기술 이름·속성을 바꾸지 않음</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>어시스턴트 · 데이터 오퍼레이터</h3>
-      <ul>
-        <li>콜 검증 / 리뷰 영상</li>
-        <li>실시간 입력과 상태 관리</li>
-        <li>종료 후 낭독·감점 반영</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>편성</h3>
-      <ul>
-        <li>최소 4명: 스페셜리스트·어시스턴트·데이터·품질1</li>
-        <li>완전 7명: +컨트롤러 +품질3(평균)</li>
-        <li>치프는 품질 심판 중 1명 겸임</li>
+        <li>기술 이름·속성은 바꾸지 않음</li>
       </ul>
     </div>
   </div>
 
-  <hr />
-  <h2>기존 심판 재배치 힌트</h2>
-  <table>
-    <thead><tr><th>기존 강점</th><th>추천</th></tr></thead>
-    <tbody>
-      <tr><td>기술 식별이 빠름</td><td>스페셜리스트</td></tr>
-      <tr><td>완성도·쇼를 잘 봄</td><td>품질 심판</td></tr>
-      <tr><td>계산·집계</td><td>데이터 오퍼레이터</td></tr>
-    </tbody>
-  </table>
+  <h2>5. 편성</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>최소 4명</h3>
+      <p class="muted">스페셜리스트 + 어시스턴트 + 데이터 오퍼레이터 + 품질 1</p>
+    </div>
+    <div class="card">
+      <h3>완전 7명</h3>
+      <p class="muted">+ 컨트롤러 + 품질 3(평균). 치프는 품질 중 1명</p>
+    </div>
+  </div>
 
+  <hr />
   <footer>
-    원문: PRO Skate Regolamento Tecnico v.2 · Freestyle Slalom.
-    <a href="https://proskatesystem.base44.app/Regulations" target="_blank" rel="noopener">proskatesystem.base44.app/Regulations</a>
-    · 지도자/훈련 전략은 별도 공개 링크(classic-guide)를 사용하세요.
+    이 페이지는 <strong>룰북·심판</strong>만 다룹니다.
+    선수 전략: <a href="https://classic-guide-418a.apps.grok.bot/">classic-guide-418a.apps.grok.bot</a>
   </footer>
 </main>
 </body>
