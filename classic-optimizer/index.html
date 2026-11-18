@@ -11,11 +11,43 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .gate {
+        max-width: 28rem;
+        margin: 18vh auto;
+        padding: 1.5rem;
+        text-align: center;
+        font-family: "IBM Plex Sans KR", sans-serif;
+      }
+      .gate h1 {
+        font-family: Syne, sans-serif;
+        font-size: 1.35rem;
+        margin: 0 0 0.75rem;
+      }
+      .gate p {
+        margin: 0 0 1.25rem;
+        line-height: 1.55;
+        opacity: 0.85;
+      }
+      .gate a {
+        color: inherit;
+        font-weight: 700;
+      }
+    </style>
   </head>
   <body>
-    <div class="page">
+    <div id="superGate" class="gate" hidden>
+      <h1>슈퍼관리자 전용</h1>
+      <p>
+        클래식 최적 구성은 코스인라인 아카데미 슈퍼관리자 로그인 후에만 사용할 수
+        있습니다.
+      </p>
+      <p><a href="/">아카데미로 돌아가 로그인</a></p>
+    </div>
+
+    <div class="page" id="optimizerApp" hidden>
       <header class="rise">
-        <p class="eyebrow">코스인라인 아카데미 · Classic 2.0</p>
+        <p class="eyebrow">코스인라인 아카데미 · Classic 2.0 · 엘리트</p>
         <h1>최적 구성</h1>
         <p class="lede">
           새로 바뀐 클래식 2.0 카드와 제약으로, 이론상 점수가 높은 연기 구성을
@@ -38,7 +70,40 @@
       </div>
     </div>
 
-    <script src="./classic-optimizer-core.js"></script>
-    <script src="./app.js"></script>
+    <script>
+      (function () {
+        var KEY = "kos-center-session-v1";
+        var SUPER_ID = "jini7903kr";
+        function isSuper() {
+          try {
+            var raw = sessionStorage.getItem(KEY);
+            if (!raw) return false;
+            var sess = JSON.parse(raw);
+            if (!sess) return false;
+            if (sess.role === "super") return true;
+            return (
+              String(sess.loginId || "")
+                .trim()
+                .toLowerCase() === SUPER_ID.toLowerCase()
+            );
+          } catch (e) {
+            return false;
+          }
+        }
+        if (isSuper()) {
+          document.getElementById("optimizerApp").hidden = false;
+          var core = document.createElement("script");
+          core.src = "./classic-optimizer-core.js";
+          core.onload = function () {
+            var app = document.createElement("script");
+            app.src = "./app.js";
+            document.body.appendChild(app);
+          };
+          document.body.appendChild(core);
+        } else {
+          document.getElementById("superGate").hidden = false;
+        }
+      })();
+    </script>
   </body>
 </html>
