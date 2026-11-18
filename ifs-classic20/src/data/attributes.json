@@ -1,0 +1,158 @@
+[
+  {
+    "name": "Back",
+    "group": "Direction",
+    "exclusiveWith": [
+      "Front"
+    ]
+  },
+  {
+    "name": "Front",
+    "group": "Direction",
+    "exclusiveWith": [
+      "Back"
+    ]
+  },
+  {
+    "name": "Reverse",
+    "group": "Direction",
+    "exclusiveWith": []
+  },
+  {
+    "name": "Ext",
+    "group": "Edges",
+    "exclusiveWith": [
+      "Int"
+    ]
+  },
+  {
+    "name": "Int",
+    "group": "Edges",
+    "exclusiveWith": [
+      "Ext"
+    ]
+  },
+  {
+    "name": "Left",
+    "group": "Legs",
+    "exclusiveWith": [
+      "Right"
+    ]
+  },
+  {
+    "name": "Right",
+    "group": "Legs",
+    "exclusiveWith": [
+      "Left"
+    ]
+  },
+  {
+    "name": "Cross",
+    "group": "Others",
+    "exclusiveWith": []
+  },
+  {
+    "name": "Grab",
+    "group": "Others",
+    "exclusiveWith": []
+  },
+  {
+    "name": "Jump",
+    "group": "Others",
+    "exclusiveWith": [
+      "Kick"
+    ]
+  },
+  {
+    "name": "Kick",
+    "group": "Others",
+    "exclusiveWith": [
+      "Jump"
+    ]
+  },
+  {
+    "name": "Christie",
+    "group": "Position",
+    "exclusiveWith": []
+  },
+  {
+    "name": "Sit",
+    "group": "Position",
+    "exclusiveWith": [
+      "Christie"
+    ]
+  },
+  {
+    "name": "1 Cone",
+    "group": "Rotations",
+    "exclusiveWith": [
+      "Double",
+      "1 Cone foreward"
+    ]
+  },
+  {
+    "name": "1 Cone foreward",
+    "group": "Rotations",
+    "exclusiveWith": [
+      "1 Cone",
+      "Double"
+    ]
+  },
+  {
+    "name": "Double",
+    "group": "Rotations",
+    "exclusiveWith": [
+      "One Cone",
+      "1 Cone",
+      "1 Cone foreward"
+    ]
+  },
+  {
+    "name": "2 Wheels HH",
+    "group": "Wheels",
+    "exclusiveWith": [
+      "2 Wheels TH",
+      "2 Wheels TT",
+      "5 Wheels"
+    ]
+  },
+  {
+    "name": "2 Wheels TH",
+    "group": "Wheels",
+    "exclusiveWith": [
+      "2 Wheels TT",
+      "5 Wheels",
+      "2 Wheels HH"
+    ]
+  },
+  {
+    "name": "2 Wheels TT",
+    "group": "Wheels",
+    "exclusiveWith": [
+      "5 Wheels",
+      "2 Wheels HH",
+      "2 Wheels TH"
+    ]
+  },
+  {
+    "name": "5 Wheels",
+    "group": "Wheels",
+    "exclusiveWith": [
+      "2 Wheels"
+    ]
+  },
+  {
+    "name": "Heel",
+    "group": "Wheels",
+    "exclusiveWith": [
+      "Toe"
+    ]
+  },
+  {
+    "name": "Toe",
+    "group": "Wheels",
+    "exclusiveWith": [
+      "Heel"
+    ]
+  }
+]
