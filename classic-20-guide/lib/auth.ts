@@ -3,28 +3,32 @@ import { cookies } from "next/headers";
 
 export const COOKIE_NAME = "classic20_guide_ok";
 
-/** Local preview only when GUIDE_PASSWORD is unset. Published app uses the secret. */
-export const SAMPLE_PASSWORD = "classic20";
-
-export function expectedPassword(): string {
-  return process.env.GUIDE_PASSWORD?.trim() || SAMPLE_PASSWORD;
+export function guidePassword(): string | null {
+  const value = process.env.GUIDE_PASSWORD?.trim();
+  return value ? value : null;
 }
 
-export function sessionSecret(): string {
-  return (
-    process.env.GUIDE_SESSION_SECRET?.trim() ||
-    `session:${expectedPassword()}`
-  );
+export function sessionSecret(): string | null {
+  const value = process.env.GUIDE_SESSION_SECRET?.trim();
+  return value ? value : null;
+}
+
+export function authConfigured(): boolean {
+  return Boolean(guidePassword() && sessionSecret());
 }
 
 export function makeToken(): string {
-  return createHmac("sha256", sessionSecret())
+  const secret = sessionSecret();
+  if (!secret) {
+    throw new Error("GUIDE_SESSION_SECRET is not configured");
+  }
+  return createHmac("sha256", secret)
     .update("classic20-guide-unlocked")
     .digest("hex");
 }
 
 export function tokenMatches(token: string | undefined): boolean {
-  if (!token) return false;
+  if (!token || !authConfigured()) return false;
   const expected = makeToken();
   const a = Buffer.from(token);
   const b = Buffer.from(expected);
@@ -33,12 +37,14 @@ export function tokenMatches(token: string | undefined): boolean {
 }
 
 export async function isUnlocked(): Promise<boolean> {
+  if (!authConfigured()) return false;
   const jar = await cookies();
   return tokenMatches(jar.get(COOKIE_NAME)?.value);
 }
 
 export function passwordOk(input: string): boolean {
-  const expected = expectedPassword();
+  const expected = guidePassword();
+  if (!expected) return false;
   const a = Buffer.from(input);
   const b = Buffer.from(expected);
   if (a.length !== b.length) return false;

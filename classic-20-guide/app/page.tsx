@@ -1,13 +1,14 @@
-import { isUnlocked } from "@/lib/auth";
+import { authConfigured, isUnlocked } from "@/lib/auth";
 import { LoginForm } from "./login-form";
 import { LogoutButton } from "./logout-button";
 
+export const dynamic = "force-dynamic";
+
 export default async function Page() {
   const unlocked = await isUnlocked();
-  const usingSample = !process.env.GUIDE_PASSWORD?.trim();
 
   if (!unlocked) {
-    return <LoginForm sampleHint={usingSample} />;
+    return <LoginForm configured={authConfigured()} />;
   }
 
   return (

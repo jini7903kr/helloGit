@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export function LoginForm({ sampleHint }: { sampleHint: boolean }) {
+export function LoginForm({ configured }: { configured: boolean }) {
   const router = useRouter();
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -11,6 +11,7 @@ export function LoginForm({ sampleHint }: { sampleHint: boolean }) {
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!configured) return;
     setBusy(true);
     setError("");
     try {
@@ -42,6 +43,12 @@ export function LoginForm({ sampleHint }: { sampleHint: boolean }) {
         <p className="lead">
           공개 링크이지만, 안내문은 비밀번호를 입력한 뒤에만 볼 수 있습니다.
         </p>
+        {!configured ? (
+          <p className="error">
+            잠금이 아직 설정되지 않았습니다. 배포 Secrets를 설정한 뒤 다시
+            열어 주세요.
+          </p>
+        ) : null}
         {error ? <p className="error">{error}</p> : null}
         <label className="muted" htmlFor="password">
           비밀번호
@@ -53,17 +60,15 @@ export function LoginForm({ sampleHint }: { sampleHint: boolean }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          disabled={!configured}
         />
-        <button type="submit" disabled={busy} style={{ width: "100%" }}>
+        <button
+          type="submit"
+          disabled={busy || !configured}
+          style={{ width: "100%" }}
+        >
           {busy ? "확인 중…" : "열기"}
         </button>
-        {sampleHint ? (
-          <p className="sample">
-            로컬/미리보기용 임시 비밀번호는 <code>classic20</code> 입니다.
-            배포 후에는 Cursor Secrets의 <code>GUIDE_PASSWORD</code> 값이
-            사용됩니다.
-          </p>
-        ) : null}
       </form>
     </div>
   );
