@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>클래식 2.0 채점·전략 · 지도자용</title>
+  <style>
+    :root {
+      --bg: #eef3f0;
+      --paper: #fbfdfc;
+      --ink: #14201a;
+      --muted: #5b6a62;
+      --line: #c9d6cf;
+      --accent: #1f6b3a;
+      --soft: #e3ece7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    main { max-width: 900px; margin: 0 auto; padding: 28px 18px 72px; }
+    .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin: 0; }
+    h1 { font-size: 1.9rem; line-height: 1.25; margin: 10px 0 0; }
+    h2 { font-size: 1.25rem; margin: 36px 0 12px; }
+    h3 { font-size: 1.05rem; margin: 0 0 8px; }
+    .lead, .muted { color: var(--muted); }
+    .callout { background: #eef8f1; border: 1px solid #b7d8c2; border-radius: 12px; padding: 14px 16px; margin: 16px 0; }
+    .warn { background: #fff6e8; border-color: #e2c48a; }
+    .card { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+    .grid2, .grid3 { display: grid; gap: 12px; }
+    @media (min-width: 720px) {
+      .grid2 { grid-template-columns: 1fr 1fr; }
+      .grid3 { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    table { width: 100%; border-collapse: collapse; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; font-size: .92rem; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: var(--soft); }
+    tr:last-child td { border-bottom: 0; }
+    ul { margin: 0; padding-left: 1.15rem; }
+    li { margin: 4px 0; }
+    hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
+    footer { margin-top: 36px; font-size: .8rem; color: var(--muted); }
+    .pill { display: inline-block; border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 4px 10px; font-size: 12px; margin-right: 6px; }
+    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 16px 0; }
+    @media (min-width: 720px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+    .stat { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+    .stat b { display: block; font-size: 1.15rem; }
+    .stat span { color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">지도자 · 채점·전략용 · Classic 2.0</p>
+  <p><span class="pill">공개</span><span class="pill">로그인 없음</span><span class="pill">심판 운영 매뉴얼과 분리</span></p>
+  <h1>클래식 2.0<br/>채점 이해 · 선수 전략</h1>
+  <p class="lead">코치·지도자가 훈련과 프로그램 구성을 잡을 때 보는 공개 안내입니다. 심판 콜 순서·편성 운영 세부는 이 페이지에 없습니다.</p>
+
+  <div class="callout warn">
+    <strong>먼저</strong><br/>
+    Classic 2.0은 PRO Skate 시험 규정입니다. World Skate 공식 규정:
+    <a href="https://www.worldskate.org/inline-freestyle/about/regulations" target="_blank" rel="noopener">worldskate.org</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>기술×연결</b><span>점수 핵심</span></div>
+    <div class="stat"><b>×1.25</b><span>연결 최고</span></div>
+    <div class="stat"><b>A·B·C</b><span>훈련 구분</span></div>
+    <div class="stat"><b>후반 ×1.10</b><span>약 90초 이후</span></div>
+  </div>
+
+  <h2>한 줄 공식</h2>
+  <div class="card">
+    <p><strong>최종 = (기술점수 × 연결 배율) + 예술점수 − 감점</strong></p>
+    <p class="muted">어려운 트릭 개수보다, 기술점수에 곱해지는 <strong>연결(풋워크)</strong>을 먼저 올리세요.</p>
+  </div>
+
+  <div class="callout">
+    <strong>전원 공통 1순위</strong><br/>
+    연결을 방치하면 기술이 클수록 손해가 커집니다.
+  </div>
+
+  <h2>쉬운 용어 (지도자)</h2>
+  <table>
+    <thead><tr><th>말</th><th>뜻</th></tr></thead>
+    <tbody>
+      <tr><td>기술점수</td><td>성공한 트릭을 더해서 나온 점수</td></tr>
+      <tr><td>연결 / 풋워크</td><td>트릭 사이 이어 타기. 기술 전체에 곱함</td></tr>
+      <tr><td>연결 배율</td><td>0 → ×0.95 … 5 → ×1.25</td></tr>
+      <tr><td>예술</td><td>흐름 · 구성(음악 끔) · 표현(음악 켬)</td></tr>
+      <tr><td>속성</td><td>같은 트릭을 더 어렵게 (예: 토)</td></tr>
+      <tr><td>후반 보너스</td><td>대략 90초 이후 성공 ×1.10</td></tr>
+    </tbody>
+  </table>
+
+  <h2>A · B · C 플레이북</h2>
+  <p class="muted">대회 공식 등급이 아니라 훈련용 구분입니다.</p>
+  <div class="grid3">
+    <div class="card">
+      <h3>A · 지키는 쪽</h3>
+      <ul>
+        <li>연결 2점대 금지</li>
+        <li>속성으로 다른 카드</li>
+        <li>큰 점수는 후반에</li>
+        <li><strong>이번 달: 연결 4+</strong></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>B · 따라잡는 쪽</h3>
+      <ul>
+        <li>A 기술의 70~85% + 연결 5 + 예술</li>
+        <li>깨끗한 B트릭 + 속성</li>
+        <li>A도 연결 5면 창이 닫힘</li>
+        <li><strong>이번 달: 연결 5</strong></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>C · 쌓아 올리는 쪽</h3>
+      <ul>
+        <li>화려한 실패보다 성공</li>
+        <li>기술 5종류 + 연결 4+</li>
+        <li>후반엔 자신 트릭</li>
+        <li><strong>이번 달: 감점 제거</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>왜 B가 A를 따라갈 수 있나</h2>
+  <p class="muted">회의용 가정 숫자입니다. 환산값이 아닙니다.</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>예전 · A 120 : B 102</h3>
+      <p class="muted">예술만으로는 메우기 어려운 18점 차이</p>
+    </div>
+    <div class="card">
+      <h3>2.0 · A 131.4 : B 129.8</h3>
+      <p class="muted">B가 연결 5·예술 우위를 만들면 A 기술의 약 71%로 동점권</p>
+    </div>
+  </div>
+
+  <h2>구성만의 차이 (전부 성공)</h2>
+  <div class="callout">
+    실패 때문이 아닙니다. 토·후반·콤보·거리만으로도 약 79 vs 47처럼 갈릴 수 있습니다.
+  </div>
+  <table>
+    <thead><tr><th>구성</th><th>최종(예)</th><th>핵심</th></tr></thead>
+    <tbody>
+      <tr><td>잘 짠 쪽</td><td>약 79</td><td>토 + 후반 + 콤보 + 거리</td></tr>
+      <tr><td>기본 성공만</td><td>약 47</td><td>성공만, 속성·후반 거의 없음</td></tr>
+    </tbody>
+  </table>
+
+  <h2>이번 달 할 일</h2>
+  <table>
+    <thead><tr><th></th><th>A</th><th>B</th><th>C</th></tr></thead>
+    <tbody>
+      <tr><td>1순위</td><td>연결 4+</td><td>연결 5</td><td>감점 제거</td></tr>
+      <tr><td>기술</td><td>속성·후반</td><td>깨끗한 B+속성</td><td>5종류+자신 콤보</td></tr>
+      <tr><td>피하기</td><td>연결 방치</td><td>미완성 A</td><td>화려한 실패</td></tr>
+    </tbody>
+  </table>
+
+  <h2>연습 체크리스트</h2>
+  <table>
+    <thead><tr><th></th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td>□</td><td>기술 종류 5가지 이상</td></tr>
+      <tr><td>□</td><td>낙상·콘 없이 한 바퀴</td></tr>
+      <tr><td>□</td><td>같은 트릭 반복 줄이기</td></tr>
+      <tr><td>□</td><td>90초 이후 자신 트릭</td></tr>
+      <tr><td>□</td><td>연결 구간 따로 연습</td></tr>
+      <tr><td>□</td><td>흐름 / 구성 / 표현 나눠 보기</td></tr>
+    </tbody>
+  </table>
+
+  <hr />
+  <div class="card">
+    <h3>한 줄로</h3>
+    <p>먼저 연결, 그다음 깨끗함·속성·후반. 화려한 실패보다 성공.</p>
+  </div>
+
+  <footer>
+    심판 콜·편성·QoE 운영 세부는 별도 공개 링크(ifs-classic20)를 사용하세요.
+    숫자 가정은 회의용이며 시즌 전 실제 프로그램으로 다시 합산하세요.
+  </footer>
+</main>
+</body>
+</html>
