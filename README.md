@@ -10,10 +10,11 @@ Interactive Classic 2.0 program optimizer (no login required):
 
 Source files live in [`classic-optimizer/`](./classic-optimizer/).
 
-### Enable GitHub Pages (one-time)
+### Enable GitHub Pages (one-time, required)
 
-If that URL 404s, turn on Pages in the repo settings:
+Agent tokens cannot turn Pages on for this repo. An owner must do this once:
 
 1. Open [Settings → Pages](https://github.com/jini7903kr/helloGit/settings/pages)
-2. **Build and deployment → Source**: choose **GitHub Actions** (preferred; workflow already in `.github/workflows/pages.yml`), **or** **Deploy from a branch** → Branch `main` / folder `/ (root)`
-3. Save, wait for the deploy, then reload the URL above
+2. **Build and deployment → Source**: Deploy from a branch
+3. Branch: `main` · Folder: `/ (root)` → Save
+4. Wait ~1 minute, then open the URL above
