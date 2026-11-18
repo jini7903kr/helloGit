@@ -1,0 +1,283 @@
+:root {
+  --bg: #f7f3eb;
+  --paper: #fffdf8;
+  --ink: #1c1915;
+  --muted: #6b6358;
+  --line: #ddd3c3;
+  --accent: #9a3412;
+  --ok: #1f6b3a;
+  --warn: #8a5a12;
+  --soft: #efe7da;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  line-height: 1.55;
+}
+
+a {
+  color: var(--accent);
+}
+
+main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 28px 18px 64px;
+}
+
+.gate {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.gate-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px 24px;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+h1 {
+  margin: 10px 0 0;
+  font-size: 1.75rem;
+  line-height: 1.25;
+}
+
+h2 {
+  margin: 36px 0 12px;
+  font-size: 1.25rem;
+}
+
+h3 {
+  margin: 24px 0 10px;
+  font-size: 1.05rem;
+}
+
+.lead,
+.muted {
+  color: var(--muted);
+}
+
+.lead {
+  margin: 12px 0 0;
+}
+
+.part {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.callout {
+  margin: 16px 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--soft);
+}
+
+.callout strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.callout.warn {
+  border-color: #e2c48a;
+  background: #fff6e5;
+}
+
+.callout.ok {
+  border-color: #b7d8c2;
+  background: #eef8f1;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0;
+}
+
+@media (min-width: 720px) {
+  .stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.stat {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.stat b {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.grid2,
+.grid3 {
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 720px) {
+  .grid2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.card li {
+  margin: 4px 0;
+  font-size: 0.95rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 0.92rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+th {
+  background: var(--soft);
+  font-weight: 700;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.row-ok td {
+  background: #f1faf4;
+}
+
+.row-bad td {
+  background: #fff1f0;
+}
+
+.row-warn td {
+  background: #fff8ea;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+button,
+.btn {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fffaf5;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 11px 16px;
+  cursor: pointer;
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+}
+
+input[type="password"] {
+  width: 100%;
+  margin: 16px 0 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  font-size: 1rem;
+  background: #fff;
+}
+
+.error {
+  color: #a11;
+  font-size: 0.9rem;
+  margin: 0 0 10px;
+}
+
+.sample {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.footer {
+  margin-top: 36px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 28px 0;
+}

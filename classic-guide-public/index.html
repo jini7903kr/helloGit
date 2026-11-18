@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>선수 전략 · Classic 2.0</title>
+  <style>
+    :root {
+      --bg: #eef3f0;
+      --paper: #fbfdfc;
+      --ink: #14201a;
+      --muted: #5b6a62;
+      --line: #c9d6cf;
+      --accent: #1f6b3a;
+      --soft: #e3ece7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    main { max-width: 900px; margin: 0 auto; padding: 28px 18px 72px; }
+    .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin: 0; }
+    h1 { font-size: 1.85rem; line-height: 1.25; margin: 10px 0 0; }
+    h2 { font-size: 1.25rem; margin: 36px 0 12px; }
+    h3 { font-size: 1.05rem; margin: 0 0 8px; }
+    .lead, .muted { color: var(--muted); }
+    .callout { background: #eef8f1; border: 1px solid #b7d8c2; border-radius: 12px; padding: 14px 16px; margin: 16px 0; }
+    .warn { background: #fff6e8; border-color: #e2c48a; }
+    .card { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+    .grid2, .grid3 { display: grid; gap: 12px; }
+    @media (min-width: 720px) {
+      .grid2 { grid-template-columns: 1fr 1fr; }
+      .grid3 { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    table { width: 100%; border-collapse: collapse; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; font-size: .92rem; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: var(--soft); }
+    tr:last-child td { border-bottom: 0; }
+    ul { margin: 0; padding-left: 1.15rem; }
+    li { margin: 4px 0; }
+    hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
+    footer { margin-top: 36px; font-size: .85rem; color: var(--muted); }
+    .nav { margin: 14px 0 0; }
+    .nav a {
+      display: inline-block;
+      margin: 0 8px 8px 0;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">공개 링크 2/2 · 선수 전략</p>
+  <h1>변화된 룰로 짜는 선수 전략</h1>
+  <p class="lead">Classic 2.0 채점식 위에서 훈련·프로그램 구성을 잡는 페이지입니다. 심판 콜·편성 세부는 룰북 링크에만 있습니다.</p>
+  <p class="nav">
+    <a href="#playbook">A·B·C 전략</a>
+  </p>
+
+  <div class="callout warn">
+    <strong>전제</strong><br/>
+    최종 = (기술점수 × 연결 배율) + 예술점수 − 감점.
+    연결을 먼저 올리는 것이 공통 1순위입니다.
+  </div>
+
+  <h2>한 줄로</h2>
+  <div class="card">
+    <p>먼저 <strong>연결</strong>, 그다음 깨끗함·속성·후반. 화려한 실패보다 성공.</p>
+  </div>
+
+  <h2>쉬운 용어</h2>
+  <table>
+    <thead><tr><th>말</th><th>뜻</th></tr></thead>
+    <tbody>
+      <tr><td>기술점수</td><td>성공한 트릭 합</td></tr>
+      <tr><td>연결</td><td>트릭 사이 이어 타기 → 기술 전체에 곱함</td></tr>
+      <tr><td>배율</td><td>0 → ×0.95 … 5 → ×1.25</td></tr>
+      <tr><td>속성</td><td>같은 트릭을 더 어렵게 (예: 토)</td></tr>
+      <tr><td>후반</td><td>약 90초 이후 성공 ×1.10</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="playbook">A · B · C 전략</h2>
+  <p class="muted">대회 공식 등급이 아니라 훈련용 구분입니다.</p>
+  <div class="grid3">
+    <div class="card">
+      <h3>A · 지키는 쪽</h3>
+      <ul>
+        <li>연결 2점대 금지</li>
+        <li>속성으로 다른 카드</li>
+        <li>큰 점수는 후반에</li>
+        <li><strong>이번 달: 연결 4+</strong></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>B · 따라잡는 쪽</h3>
+      <ul>
+        <li>A 기술의 70~85% + 연결 5 + 예술</li>
+        <li>깨끗한 B트릭 + 속성</li>
+        <li>A도 연결 5면 창이 닫힘</li>
+        <li><strong>이번 달: 연결 5</strong></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>C · 쌓아 올리는 쪽</h3>
+      <ul>
+        <li>화려한 실패보다 성공</li>
+        <li>기술 5종류 + 연결 4+</li>
+        <li>후반엔 자신 트릭</li>
+        <li><strong>이번 달: 감점 제거</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>왜 B가 A를 따라갈 수 있나</h2>
+  <p class="muted">회의용 가정입니다.</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>예전 · 차이 18점</h3>
+      <p class="muted">예술만으로 메우기 어려움</p>
+    </div>
+    <div class="card">
+      <h3>2.0 · 차이 약 1.65점</h3>
+      <p class="muted">B가 연결 5·예술 우위를 만들면 A 기술의 약 71%로 동점권</p>
+    </div>
+  </div>
+
+  <h2>구성만의 차이 (전부 성공)</h2>
+  <div class="callout">
+    토·후반·콤보·거리만으로도 약 79 vs 47처럼 갈릴 수 있습니다. 실패 때문이 아닙니다.
+  </div>
+
+  <h2>이번 달 체크</h2>
+  <table>
+    <thead><tr><th></th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td>□</td><td>연결 구간 따로 연습</td></tr>
+      <tr><td>□</td><td>낙상·콘 없이 한 바퀴</td></tr>
+      <tr><td>□</td><td>같은 트릭 반복 줄이기</td></tr>
+      <tr><td>□</td><td>90초 이후 자신 트릭</td></tr>
+      <tr><td>□</td><td>등급별 1순위 지키기</td></tr>
+    </tbody>
+  </table>
+
+  <hr />
+  <footer>
+    이 페이지는 <strong>선수 전략</strong>만 다룹니다.
+    룰북·심판 공개 링크는 배포 확정 후 이 페이지에 연결합니다.
+  </footer>
+</main>
+</body>
+</html>
